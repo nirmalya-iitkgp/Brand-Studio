@@ -1,0 +1,597 @@
+import { BrandProject } from '../types/studio';
+
+export const CAMPAIGN_ASSET_GALLERY = [
+  {
+    title: 'Vespera Apothecary — Still Life',
+    url: '/src/assets/images/campaign_vespera_botanicals_1793872064346.jpg',
+  },
+  {
+    title: 'Kinetix Urban — Brutalist Dusk',
+    url: '/src/assets/images/campaign_kinetix_mobility_1793872064896.jpg',
+  },
+  {
+    title: 'Aetheris Synth — Vacuum Tube Study',
+    url: '/src/assets/images/campaign_aetheris_audio_1793872065517.jpg',
+  },
+];
+
+export const PRESET_BRAND_PROJECTS: BrandProject[] = [
+  {
+    id: 'vespera-botanicals',
+    name: 'Vespera Botanicals',
+    sector: 'Archival Apothecary & Skincare',
+    thesis:
+      'Reframes botanical skincare from fleeting wellness trend to empirical herbalist archive—uniting clinical precision with wild-harvested alchemy.',
+    updatedAt: '2026-11-05',
+    semioticSquare: {
+      activeVector: 'Wild Nature vs. Clinical Science',
+      s1: 'Wild Botanical',
+      s2: 'Clinical Synthetic',
+      notS2: 'Empirical Alchemy (Not-Synthetic)',
+      notS1: 'Sterile Minimalist (Not-Wild)',
+      brandPosition: { x: 28, y: 74 },
+      competitors: [
+        { id: 'c1', name: 'Lush / Aesop', x: 22, y: 26 },
+        { id: 'c2', name: 'La Mer / Clinical', x: 78, y: 24 },
+        { id: 'c3', name: 'The Ordinary', x: 76, y: 76 },
+      ],
+    },
+    archetypes: {
+      copySample:
+        'Cold-macerated alpine flora documented by batch, harvest altitude, and cellular lipid affinity. An enduring apothecary ritual.',
+      visualCues:
+        'Amber UV-protective glass, brass vernier calipers, raw slate stone, archival serif typography.',
+      weights: {
+        sage: 88,
+        magician: 76,
+        creator: 68,
+        caregiver: 54,
+        explorer: 48,
+        innocent: 42,
+        ruler: 38,
+        lover: 35,
+        everyman: 28,
+        hero: 22,
+        outlaw: 18,
+        jester: 12,
+      },
+    },
+    mythEngine: {
+      leftPole: 'Untamed Nature',
+      leftAnxiety: 'Fear of volatile, unstandardized, or ineffective folk remedies.',
+      rightPole: 'Industrial Laboratory',
+      rightAnxiety: 'Alienation from synthetic petrochemicals and sterile clinical coldness.',
+      brandBridge: 'The Botanist’s Archive: Wild-harvested potency calibrated with apothecary rigor.',
+      mediatingRitual: 'Measuring exact drop dosage with a weighted brass dropper at dusk.',
+      proofPoints: [
+        '100% single-origin alpine harvest coordinates stamped on every bottle',
+        'Cold-vacuum extraction preserving 98.4% active polyphenols',
+        'Zero synthetic fragrance, silicone, or plastic primary packaging',
+      ],
+    },
+    storyCircle: {
+      campaignTitle: 'The Alpine Herbarium — Autumn Monograph',
+      stages: [
+        { step: 1, label: 'You', phase: 'Order', sceneTitle: 'The Overstimulated Desk', copyBeat: 'Surrounded by 12-step routines and synthetic promises.', emotionalIntensity: 3 },
+        { step: 2, label: 'Need', phase: 'Order', sceneTitle: 'Quiet Restorative Clarity', copyBeat: 'A desire to strip away noise and return to one honest ritual.', emotionalIntensity: 5 },
+        { step: 3, label: 'Go', phase: 'Chaos', sceneTitle: 'Ascent to 2,100m', copyBeat: 'Following our botanists into the late-autumn Valais ridge.', emotionalIntensity: 6 },
+        { step: 4, label: 'Search', phase: 'Chaos', sceneTitle: 'The First Frost Harvest', copyBeat: 'Testing resilience where only high-altitude gentian survives.', emotionalIntensity: 8 },
+        { step: 5, label: 'Find', phase: 'Chaos', sceneTitle: 'Cold-Macerated Elixir', copyBeat: 'Extracting pure cellular lipid oil without heat or solvents.', emotionalIntensity: 9 },
+        { step: 6, label: 'Take', phase: 'Chaos', sceneTitle: 'The Amber Vessel', copyBeat: 'Sealing the harvest in UV-shielded apothecary glass.', emotionalIntensity: 7 },
+        { step: 7, label: 'Return', phase: 'Order', sceneTitle: 'Evening Sanctuary', copyBeat: 'Three measured drops on damp skin before sleep.', emotionalIntensity: 5 },
+        { step: 8, label: 'Change', phase: 'Order', sceneTitle: 'Resilient Equilibrium', copyBeat: 'Skin barrier restored; daily routine reduced to one enduring artifact.', emotionalIntensity: 4 },
+      ],
+    },
+    signifierAudit: {
+      assetUrl: '/src/assets/images/campaign_vespera_botanicals_1793872064346.jpg',
+      assetTitle: 'Vespera Apothecary — Still Life',
+      pins: [
+        {
+          id: 'p1',
+          x: 40,
+          y: 52,
+          label: 'Amber Apothecary Bottle',
+          denotation: 'Cork-stoppered brown glass vessel with serif paper label.',
+          connotation: '19th-century pharmaceutical authenticity and UV preservation.',
+          ideology: 'Time-tested craftsmanship over disposable modern consumerism.',
+        },
+        {
+          id: 'p2',
+          x: 68,
+          y: 74,
+          label: 'Brass Vernier Caliper',
+          denotation: 'Aged brass precision measuring instrument resting on slate.',
+          connotation: 'Empirical measurement, scientific rigor, and tactile permanence.',
+          ideology: 'Nature is not vague; it can be measured and mastered with respect.',
+        },
+        {
+          id: 'p3',
+          x: 72,
+          y: 44,
+          label: 'Dried Wild Botanicals',
+          denotation: 'Twine-bound bundle of dried lavender and seed pods.',
+          connotation: 'Seasonal harvest, patient air-drying, unhurried preparation.',
+          ideology: 'Slowness and organic provenance as markers of true luxury.',
+        },
+      ],
+    },
+    codeMapper: {
+      items: [
+        { id: 'cm1', title: 'Pastel minimalist dropper tubes', category: 'Visual', stage: 'dominant', rationale: 'Saturated across DTC skincare; signals generic "clean beauty."' },
+        { id: 'cm2', title: 'Floral watercolor illustrations', category: 'Visual', stage: 'residual', rationale: 'Evokes dated 1990s potpourri and lacks clinical credibility.' },
+        { id: 'cm3', title: 'Archival batch-numbered apothecary glass & brass tools', category: 'Material', stage: 'emergent', rationale: 'Bridges museum-grade provenance with tactile daily ritual.' },
+        { id: 'cm4', title: 'Miracle anti-aging claims', category: 'Verbal', stage: 'residual', rationale: 'Creates consumer skepticism and oppositional decoding.' },
+        { id: 'cm5', title: 'Harvest altitude & extraction telemetry', category: 'Verbal', stage: 'emergent', rationale: 'Satisfies ingredient-literate buyers without sterile lab jargon.' },
+      ],
+    },
+    rhetoricDesigner: {
+      rawFeature: 'Cold-pressed alpine gentian root oil in UV-filtering amber glass',
+      targetTone: 'Archival',
+      transformations: [
+        {
+          trope: 'metaphor',
+          headline: 'An archival vault for high-altitude resilience',
+          body: 'Vespera’s amber vessel preserves alpine gentian at peak potency—turning cellular recovery into a quiet evening monograph.',
+          mechanism: 'Substitution — equates a skincare bottle with an archival preservation vault.',
+        },
+        {
+          trope: 'metonymy',
+          headline: '2,100 meters of alpine stillness, distilled',
+          body: 'Every drop carries the thin air, first frost, and unhurried patience of the Valais ridge.',
+          mechanism: 'Association — substitutes the geographic origin and climate for the oil itself.',
+        },
+        {
+          trope: 'synecdoche',
+          headline: 'One calibrated drop. The entire apothecary.',
+          body: 'A single cold-macerated botanical extract that replaces a shelf of redundant serums.',
+          mechanism: 'Part-for-Whole — lets one measured drop stand for total skin equilibrium.',
+        },
+        {
+          trope: 'irony',
+          headline: 'Zero miracle claims. Just 140 days of patient maceration.',
+          body: 'While the industry races to invent new synthetics, we wait for the first mountain frost.',
+          mechanism: 'Contrast — subverts fast-beauty hype with deliberate slowness.',
+        },
+      ],
+    },
+    receptionRadar: {
+      campaignMessage: 'Formulated without synthetics—measured like a 19th-century apothecary.',
+      segments: [
+        {
+          id: 's1',
+          demographic: 'Design-Literate Minimalists (28–45)',
+          dominantPct: 74,
+          negotiatedPct: 20,
+          oppositionalPct: 6,
+          frictionTrigger: 'Price point vs. perceived volume.',
+          mitigation: 'Emphasize 90-day concentrated drop longevity.',
+        },
+        {
+          id: 's2',
+          demographic: 'Clinical Dermatology Loyalists',
+          dominantPct: 38,
+          negotiatedPct: 44,
+          oppositionalPct: 18,
+          frictionTrigger: 'Suspicion that "apothecary" means unverified folk science.',
+          mitigation: 'Pair archival imagery with polyphenol assay data.',
+        },
+        {
+          id: 's3',
+          demographic: 'Gen-Z Clean Beauty Skeptics',
+          dominantPct: 28,
+          negotiatedPct: 42,
+          oppositionalPct: 30,
+          frictionTrigger: 'Perceived elitism or performative vintage nostalgia.',
+          mitigation: 'Highlight refillable glass circularity and transparent farmer pay.',
+        },
+      ],
+    },
+  },
+  {
+    id: 'kinetix-mobility',
+    name: 'Kinetix Mobility',
+    sector: 'Architectural Urban E-Bikes',
+    thesis:
+      'Positions urban electric transit as silent architectural infrastructure—resolving the tension between high-speed commuting and unhurried city presence.',
+    updatedAt: '2026-11-05',
+    semioticSquare: {
+      activeVector: 'Speed / Utility vs. Presence / Craft',
+      s1: 'High-Speed Utility',
+      s2: 'Leisurely Craft',
+      notS2: 'Silent Architectural Flow (Not-Leisurely)',
+      notS1: 'Clunky Cargo Transit (Not-Speed)',
+      brandPosition: { x: 32, y: 72 },
+      competitors: [
+        { id: 'k1', name: 'VanMoof / Cowboy', x: 25, y: 25 },
+        { id: 'k2', name: 'Brompton / Pashley', x: 78, y: 28 },
+        { id: 'k3', name: 'Rad Power Bikes', x: 75, y: 78 },
+      ],
+    },
+    archetypes: {
+      copySample:
+        'Monocoque matte-anodized frame with torque-sensing belt drive. Engineered for silent command of the evening grid.',
+      visualCues:
+        'Brutalist concrete plazas, wet asphalt reflections, warm amber streetlamps, matte charcoal geometry.',
+      weights: {
+        creator: 86,
+        ruler: 78,
+        explorer: 70,
+        hero: 62,
+        sage: 55,
+        outlaw: 44,
+        magician: 40,
+        everyman: 34,
+        innocent: 24,
+        lover: 22,
+        caregiver: 18,
+        jester: 10,
+      },
+    },
+    mythEngine: {
+      leftPole: 'Gridlocked Acceleration',
+      leftAnxiety: 'Exhaustion from traffic, noise pollution, and aggressive commuter culture.',
+      rightPole: 'Fragile Nostalgia',
+      rightAnxiety: 'Impracticality of vintage bicycles on steep hills and long distances.',
+      brandBridge: 'Architectural Momentum: Effortless electric torque housed in timeless, silent geometry.',
+      mediatingRitual: 'Gliding past gridlocked avenues at dusk with zero chain noise.',
+      proofPoints: [
+        'Gates carbon belt drive rated for 30,000 km with zero grease',
+        'Integrated 110-lux warm-beam headlamp flush with the stem',
+        '14.2 kg hydroformed aluminum frame',
+      ],
+    },
+    storyCircle: {
+      campaignTitle: 'Concrete & Current — Dusk Commute',
+      stages: [
+        { step: 1, label: 'You', phase: 'Order', sceneTitle: '5:45 PM Glass Tower', copyBeat: 'Stepping out into the evening rush.', emotionalIntensity: 3 },
+        { step: 2, label: 'Need', phase: 'Order', sceneTitle: 'Reclaim the Hour', copyBeat: 'Refusing another 45 minutes trapped in subterranean transit.', emotionalIntensity: 5 },
+        { step: 3, label: 'Go', phase: 'Chaos', sceneTitle: 'Unlocking on the Plaza', copyBeat: 'Thumbprint release; the amber halo wakes.', emotionalIntensity: 6 },
+        { step: 4, label: 'Search', phase: 'Chaos', sceneTitle: 'The Riverfront Viaduct', copyBeat: '18% incline met with invisible torque assistance.', emotionalIntensity: 8 },
+        { step: 5, label: 'Find', phase: 'Chaos', sceneTitle: ' Effortless Cadence', copyBeat: 'The city’s brutalist geometry blurs into rhythm.', emotionalIntensity: 9 },
+        { step: 6, label: 'Take', phase: 'Chaos', sceneTitle: 'Zero-Friction Arrival', copyBeat: 'Carrying the 14 kg frame up three steps with one hand.', emotionalIntensity: 7 },
+        { step: 7, label: 'Return', phase: 'Order', sceneTitle: 'Courtyard Stillness', copyBeat: 'Parked beside warm limestone, battery at 82%.', emotionalIntensity: 5 },
+        { step: 8, label: 'Change', phase: 'Order', sceneTitle: 'Sovereign Commuter', copyBeat: 'The city is no longer an obstacle; it is your studio.', emotionalIntensity: 4 },
+      ],
+    },
+    signifierAudit: {
+      assetUrl: '/src/assets/images/campaign_kinetix_mobility_1793872064896.jpg',
+      assetTitle: 'Kinetix Urban — Brutalist Dusk',
+      pins: [
+        {
+          id: 'kp1',
+          x: 42,
+          y: 68,
+          label: 'Matte Charcoal Monocoque',
+          denotation: 'Dark, weld-free diamond bicycle frame with integrated battery.',
+          connotation: 'Stealth industrial design, architectural permanence.',
+          ideology: 'Technology should blend into civic architecture, not shout.',
+        },
+        {
+          id: 'kp2',
+          x: 34,
+          y: 28,
+          label: 'Brutalist Concrete Cantilever',
+          denotation: 'Monumental raw concrete cultural center at twilight.',
+          connotation: 'Civic ambition, modernist heritage, structural honesty.',
+          ideology: 'Urbanism as an elevating human achievement.',
+        },
+        {
+          id: 'kp3',
+          x: 79,
+          y: 44,
+          label: 'Warm Amber Streetlamp Reflection',
+          denotation: 'Golden-amber light reflecting across rain-slicked paving stones.',
+          connotation: 'Human warmth amid monumental scale; evening sanctuary.',
+          ideology: 'Precision engineering serving human comfort.',
+        },
+      ],
+    },
+    codeMapper: {
+      items: [
+        { id: 'km1', title: 'Neon-accented e-bike tech graphics', category: 'Visual', stage: 'dominant', rationale: 'Overused by gadget-first e-bike startups.' },
+        { id: 'km2', title: 'Lycra-clad peloton speed tropes', category: 'Ritual', stage: 'residual', rationale: 'Alienates everyday architectural and design commuters.' },
+        { id: 'km3', title: 'Brutalist civic architecture & warm twilight', category: 'Visual', stage: 'emergent', rationale: 'Elevates commuting to an architectural experience.' },
+      ],
+    },
+    rhetoricDesigner: {
+      rawFeature: 'Torque-sensing carbon belt drive with 14.2 kg matte aluminum frame',
+      targetTone: 'Technical',
+      transformations: [
+        {
+          trope: 'metaphor',
+          headline: 'Silent civic architecture on two wheels',
+          body: 'Kinetix replaces the clatter of chains with a 14.2 kg monocoque span built for the modern grid.',
+          mechanism: 'Substitution — frames the bicycle as a moving piece of civic architecture.',
+        },
+        {
+          trope: 'metonymy',
+          headline: 'Twenty minutes of twilight, reclaimed',
+          body: 'Leave the subterranean platform behind; measure your evening in riverfront blocks.',
+          mechanism: 'Association — substitutes the time and atmosphere gained for the drivetrain.',
+        },
+        {
+          trope: 'synecdoche',
+          headline: 'Zero grease. Zero chain. Pure momentum.',
+          body: 'One tensioned carbon belt that defines a maintenance-free decade.',
+          mechanism: 'Part-for-Whole — uses the belt drive to represent total mechanical purity.',
+        },
+        {
+          trope: 'irony',
+          headline: '250 watts of power that never raises its voice',
+          body: 'The fastest way across the city is also the quietest.',
+          mechanism: 'Contrast — pairs high electric torque with acoustic silence.',
+        },
+      ],
+    },
+    receptionRadar: {
+      campaignMessage: 'Architectural momentum for the silent city.',
+      segments: [
+        {
+          id: 'ks1',
+          demographic: 'Urban Architects & Creative Directors',
+          dominantPct: 80,
+          negotiatedPct: 15,
+          oppositionalPct: 5,
+          frictionTrigger: 'Proprietary component repairability.',
+          mitigation: 'Publish open-standard service manual and 5-year frame warranty.',
+        },
+        {
+          id: 'ks2',
+          demographic: 'Pragmatic All-Weather Commuters',
+          dominantPct: 45,
+          negotiatedPct: 40,
+          oppositionalPct: 15,
+          frictionTrigger: 'Concern over fender coverage and cargo rack capacity.',
+          mitigation: 'Showcase integrated mudguards and modular rear pannier mounts.',
+        },
+      ],
+    },
+  },
+  {
+    id: 'aetheris-audio',
+    name: 'Aetheris Audio',
+    sector: 'Hybrid Vacuum-Tube Synthesizers',
+    thesis:
+      'Bridges tactile analog warmth with deterministic digital recall—giving studio composers an instrument that ages like a masterwork.',
+    updatedAt: '2026-11-05',
+    semioticSquare: {
+      activeVector: 'Analog Warmth vs. Digital Precision',
+      s1: 'Analog Soul',
+      s2: 'Digital Precision',
+      notS2: 'Tactile Harmonic Recall (Not-Purely-Digital)',
+      notS1: 'Sterile Plugin (Not-Analog)',
+      brandPosition: { x: 30, y: 70 },
+      competitors: [
+        { id: 'a1', name: 'Moog / Sequential', x: 20, y: 22 },
+        { id: 'a2', name: 'Native Instruments', x: 80, y: 25 },
+        { id: 'a3', name: 'Teenage Engineering', x: 72, y: 74 },
+      ],
+    },
+    archetypes: {
+      copySample:
+        'Dual 12AX7 vacuum tubes paired with 32-bit floating-point wavetable oscillators in a milled basalt-and-aluminum chassis.',
+      visualCues:
+        'Glowing amber vacuum tubes, knurled anodized knobs, dark basalt stone, warm OLED waveform.',
+      weights: {
+        magician: 90,
+        creator: 84,
+        sage: 72,
+        lover: 58,
+        ruler: 46,
+        explorer: 42,
+        hero: 30,
+        outlaw: 28,
+        innocent: 20,
+        everyman: 18,
+        caregiver: 15,
+        jester: 10,
+      },
+    },
+    mythEngine: {
+      leftPole: 'Unpredictable Analog Drift',
+      leftAnxiety: 'Tuning instability and inability to recall complex patches in live performance.',
+      rightPole: 'Soulless Screen Fatigue',
+      rightAnxiety: 'Mouse-clicking through sterile software menus that kill musical intuition.',
+      brandBridge: 'Luminous Permanence: Real vacuum-tube saturation with instant hardware patch memory.',
+      mediatingRitual: 'Turning knurled aluminum encoders while watching dual 12AX7 tubes warm up.',
+      proofPoints: [
+        'Matched pair of NOS-grade 12AX7A vacuum tubes',
+        'Zero-latency OLED oscilloscope per voice',
+        'CNC-milled 6061 anodized aluminum unibody',
+      ],
+    },
+    storyCircle: {
+      campaignTitle: 'Harmonic Matter — Late Night Studio',
+      stages: [
+        { step: 1, label: 'You', phase: 'Order', sceneTitle: 'The Glowing DAW Grid', copyBeat: 'Staring at 64 tracks of flat, quantized plugins.', emotionalIntensity: 3 },
+        { step: 2, label: 'Need', phase: 'Order', sceneTitle: 'Physical Resistance', copyBeat: 'Craving an instrument that pushes back under your fingers.', emotionalIntensity: 5 },
+        { step: 3, label: 'Go', phase: 'Chaos', sceneTitle: 'Powering the Filaments', copyBeat: 'Flipping the toggle; amber filaments ignite.', emotionalIntensity: 7 },
+        { step: 4, label: 'Search', phase: 'Chaos', sceneTitle: 'Sweeping the Filter', copyBeat: 'Driving the 12AX7 stage into rich even-order harmonics.', emotionalIntensity: 8 },
+        { step: 5, label: 'Find', phase: 'Chaos', sceneTitle: 'The Living Drone', copyBeat: 'A bassline that breathes like wood and brass.', emotionalIntensity: 10 },
+        { step: 6, label: 'Take', phase: 'Chaos', sceneTitle: 'Instant Snapshot', copyBeat: 'Storing the exact analog-digital state in one button press.', emotionalIntensity: 7 },
+        { step: 7, label: 'Return', phase: 'Order', sceneTitle: 'The Master Take', copyBeat: 'Tracking straight to tape with zero post-EQ needed.', emotionalIntensity: 6 },
+        { step: 8, label: 'Change', phase: 'Order', sceneTitle: 'Tactile Authorship', copyBeat: 'Music composed by hand, not by cursor.', emotionalIntensity: 5 },
+      ],
+    },
+    signifierAudit: {
+      assetUrl: '/src/assets/images/campaign_aetheris_audio_1793872065517.jpg',
+      assetTitle: 'Aetheris Synth — Vacuum Tube Study',
+      pins: [
+        {
+          id: 'ap1',
+          x: 74,
+          y: 36,
+          label: 'Dual 12AX7 Vacuum Tubes',
+          denotation: 'Exposed glass vacuum tubes glowing warm amber inside protective cages.',
+          connotation: 'Mid-century broadcast warmth, living electrical alchemy.',
+          ideology: 'True sound requires physical heat and vacuum physics, not just code.',
+        },
+        {
+          id: 'ap2',
+          x: 34,
+          y: 66,
+          label: 'Compact Matte Keybed',
+          denotation: 'Dark charcoal velocity-sensitive keys set flush into milled aluminum.',
+          connotation: 'Focused, disciplined composition without excess.',
+          ideology: 'Constraint breeds deeper musical invention.',
+        },
+      ],
+    },
+    codeMapper: {
+      items: [
+        { id: 'am1', title: 'Rainbow RGB pad matrices', category: 'Visual', stage: 'dominant', rationale: 'Signals toy-like beatmaking rather than serious studio craft.' },
+        { id: 'am2', title: 'Wood-cheeked 1970s synth nostalgia', category: 'Material', stage: 'residual', rationale: 'Feels derivative of legacy clones.' },
+        { id: 'am3', title: 'Exposed vacuum tubes + monochrome OLED telemetry', category: 'Material', stage: 'emergent', rationale: 'Fuses mid-century physics with contemporary precision.' },
+      ],
+    },
+    rhetoricDesigner: {
+      rawFeature: 'Dual 12AX7 vacuum tube saturation stage with digital patch recall',
+      targetTone: 'Intimate',
+      transformations: [
+        {
+          trope: 'metaphor',
+          headline: 'A hearth of glowing glass inside a monolith of aluminum',
+          body: 'Aetheris brings the living warmth of vacuum physics to modern studio composition.',
+          mechanism: 'Substitution — equates vacuum tubes with a warm architectural hearth.',
+        },
+        {
+          trope: 'metonymy',
+          headline: 'The amber glow before the first note',
+          body: 'Twenty seconds of filament warm-up that shifts the entire room into listening mode.',
+          mechanism: 'Association — uses the pre-play warm-up ritual to stand for the instrument.',
+        },
+        {
+          trope: 'synecdoche',
+          headline: 'Two glass filaments. Infinite harmonic weight.',
+          body: 'Every digital oscillator passes through real 12AX7 vacuum saturation.',
+          mechanism: 'Part-for-Whole — elevates the dual tubes to represent the entire sonic engine.',
+        },
+        {
+          trope: 'irony',
+          headline: '1950s vacuum physics, recalled in 0.4 milliseconds',
+          body: 'All the unpredictability of analog heat—without ever losing your patch.',
+          mechanism: 'Contrast — juxtaposes vintage tube warmth with millisecond digital recall.',
+        },
+      ],
+    },
+    receptionRadar: {
+      campaignMessage: 'Where vacuum-tube alchemy meets deterministic recall.',
+      segments: [
+        {
+          id: 'as1',
+          demographic: 'Film Composers & Mastering Engineers',
+          dominantPct: 82,
+          negotiatedPct: 14,
+          oppositionalPct: 4,
+          frictionTrigger: 'Polyphony count vs. price.',
+          mitigation: 'Highlight 8-voice paraphonic + 4-voice true analog signal path.',
+        },
+        {
+          id: 'as2',
+          demographic: 'Bedroom DAW Producers',
+          dominantPct: 40,
+          negotiatedPct: 34,
+          oppositionalPct: 26,
+          frictionTrigger: 'Perceived intimidation of hardware vs. $99 VST plugins.',
+          mitigation: 'Demonstrate 1-cable USB-C audio/MIDI hybrid workflow.',
+        },
+      ],
+    },
+  },
+];
+
+export function createBlankProject(name: string, sector: string): BrandProject {
+  const cleanName = name.trim() || 'Untitled Brand';
+  const cleanSector = sector.trim() || 'Brand Architecture';
+  return {
+    id: `brand-${Date.now()}`,
+    name: cleanName,
+    sector: cleanSector,
+    thesis: `Strategic semiotic and cultural narrative architecture for ${cleanName}.`,
+    updatedAt: new Date().toISOString().slice(0, 10),
+    semioticSquare: {
+      activeVector: 'Tradition vs. Innovation',
+      s1: 'Heritage Craft',
+      s2: 'Disruptive Tech',
+      notS2: 'Timeless Utility (Not-Tech)',
+      notS1: 'Avant-Garde (Not-Heritage)',
+      brandPosition: { x: 35, y: 65 },
+      competitors: [],
+    },
+    archetypes: {
+      copySample: `${cleanName} unites enduring craft with clear purpose.`,
+      visualCues: 'Matte charcoal surfaces, warm parchment typography, brass accents.',
+      weights: {
+        creator: 75,
+        sage: 70,
+        explorer: 50,
+        magician: 50,
+        ruler: 45,
+        caregiver: 40,
+        hero: 40,
+        innocent: 35,
+        lover: 35,
+        everyman: 30,
+        outlaw: 25,
+        jester: 20,
+      },
+    },
+    mythEngine: {
+      leftPole: 'Pole A (e.g., Speed)',
+      leftAnxiety: 'Anxiety associated with Pole A.',
+      rightPole: 'Pole B (e.g., Depth)',
+      rightAnxiety: 'Anxiety associated with Pole B.',
+      brandBridge: `${cleanName} resolves the tension between Pole A and Pole B.`,
+      mediatingRitual: 'Signature customer interaction that embodies the resolution.',
+      proofPoints: ['Primary material or behavioral proof point'],
+    },
+    storyCircle: {
+      campaignTitle: `${cleanName} — Core Narrative Arc`,
+      stages: [
+        { step: 1, label: 'You', phase: 'Order', sceneTitle: 'Zone of Comfort', copyBeat: 'Establishing the audience’s familiar world.', emotionalIntensity: 3 },
+        { step: 2, label: 'Need', phase: 'Order', sceneTitle: 'Inciting Tension', copyBeat: 'A cultural or personal need emerges.', emotionalIntensity: 5 },
+        { step: 3, label: 'Go', phase: 'Chaos', sceneTitle: 'Crossing the Threshold', copyBeat: 'Stepping into an unfamiliar experience.', emotionalIntensity: 6 },
+        { step: 4, label: 'Search', phase: 'Chaos', sceneTitle: 'Trials & Discovery', copyBeat: 'Testing new codes and possibilities.', emotionalIntensity: 8 },
+        { step: 5, label: 'Find', phase: 'Chaos', sceneTitle: 'The Core Truth', copyBeat: 'Discovering what the brand uniquely unlocks.', emotionalIntensity: 9 },
+        { step: 6, label: 'Take', phase: 'Chaos', sceneTitle: 'Paying the Price', copyBeat: 'Committing to the new standard.', emotionalIntensity: 7 },
+        { step: 7, label: 'Return', phase: 'Order', sceneTitle: 'Bringing It Home', copyBeat: 'Integrating the transformation into daily life.', emotionalIntensity: 5 },
+        { step: 8, label: 'Change', phase: 'Order', sceneTitle: 'New Equilibrium', copyBeat: 'Permanent shift in identity and meaning.', emotionalIntensity: 4 },
+      ],
+    },
+    signifierAudit: {
+      assetUrl: '/src/assets/images/campaign_vespera_botanicals_1793872064346.jpg',
+      assetTitle: `${cleanName} — Campaign Plate`,
+      pins: [],
+    },
+    codeMapper: {
+      items: [
+        {
+          id: `code-${Date.now()}`,
+          title: 'Category-standard visual trope',
+          category: 'Visual',
+          stage: 'dominant',
+          rationale: 'Baseline expectation in the sector.',
+        },
+      ],
+    },
+    rhetoricDesigner: {
+      rawFeature: 'Core product capability',
+      targetTone: 'Archival',
+      transformations: [],
+    },
+    receptionRadar: {
+      campaignMessage: `${cleanName}: Built for enduring clarity.`,
+      segments: [
+        {
+          id: `seg-${Date.now()}`,
+          demographic: 'Core Early Adopters',
+          dominantPct: 65,
+          negotiatedPct: 25,
+          oppositionalPct: 10,
+          frictionTrigger: 'Initial unfamiliarity with positioning.',
+          mitigation: 'Provide clear origin story and tactile proof.',
+        },
+      ],
+    },
+  };
+}

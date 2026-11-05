@@ -1,0 +1,6 @@
+{
+  "name": "Signum Atelier — Brand Semiotic & Cultural Narrative Studio",
+  "description": "Qualitative cultural theory and brand strategy workbench bridging Greimas semiotics, Jungian archetypes, Lévi-Strauss myth, Harmon story circles, Barthesian signifier audits, cultural code mapping, rhetorical tropes, and Stuart Hall reception radar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
