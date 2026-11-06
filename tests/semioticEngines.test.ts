@@ -4,6 +4,7 @@ import {
   analyzeArchetypeAlignment,
   computeSemioticQuadrant,
   evaluateReceptionRisk,
+  generateStructuralPositioningMatrix,
   reorderStoryStages,
   sanitizeString,
   scoreTextAgainstArchetypes,
@@ -135,4 +136,21 @@ test('Story Circle reorderStoryStages reorders beats and updates step numbers an
   assert.equal(reordered[0].step, 1);
   assert.equal(reordered[0].phase, 'Order');
 });
+
+test('Structural Positioning Matrix auto-generates brand centroid and competitor nodes from signifiers', () => {
+  const p = PRESET_BRAND_PROJECTS[0];
+  const matrix = generateStructuralPositioningMatrix(
+    p.signifierAudit.pins,
+    p.semioticSquare.competitors,
+    p.name
+  );
+  const centroid = matrix.nodes.find((n) => n.kind === 'brand-centroid');
+  assert.ok(centroid !== undefined);
+  assert.equal(
+    matrix.nodes.length,
+    p.signifierAudit.pins.length + p.semioticSquare.competitors.length + 1
+  );
+  assert.ok(matrix.summary.includes(p.name));
+});
+
 

@@ -1,9 +1,11 @@
 import {
   ArchetypeId,
   BrandProject,
+  CompetitorPin,
   ReceptionSegment,
   RhetoricalTransformation,
   SemioticSquareData,
+  SignifierPin,
   StoryStage,
 } from '../types/studio';
 
@@ -353,6 +355,7 @@ export function validateAndParseBrandProject(jsonString: string): BrandProject |
             ? signifier.assetUrl
             : '/src/assets/images/campaign_vespera_botanicals_1793872064346.jpg',
         assetTitle: sanitizeString(signifier.assetTitle, 100) || 'Campaign Visual',
+        textualAsset: sanitizeString(signifier.textualAsset, 300),
         pins: Array.isArray(signifier.pins)
           ? signifier.pins.slice(0, 20).map((p: Record<string, unknown>, idx: number) => ({
               id: sanitizeString(p.id, 40) || `pin-${idx}`,
@@ -362,6 +365,17 @@ export function validateAndParseBrandProject(jsonString: string): BrandProject |
               denotation: sanitizeString(p.denotation, 200),
               connotation: sanitizeString(p.connotation, 200),
               ideology: sanitizeString(p.ideology, 200),
+              thoughtReference: sanitizeString(p.thoughtReference, 200),
+              referent: sanitizeString(p.referent, 200),
+              paradigmaticAlternative: sanitizeString(p.paradigmaticAlternative, 200),
+              culturalAxisX:
+                p.culturalAxisX !== undefined
+                  ? clamp(Number(p.culturalAxisX), -50, 50)
+                  : undefined,
+              culturalAxisY:
+                p.culturalAxisY !== undefined
+                  ? clamp(Number(p.culturalAxisY), -50, 50)
+                  : undefined,
             }))
           : [],
       },
@@ -443,4 +457,133 @@ export function reorderStoryStages(
     phase: (idx >= 2 && idx <= 5 ? 'Chaos' : 'Order') as 'Order' | 'Chaos',
   }));
 }
+
+export interface StructuralMatrixNode {
+  id: string;
+  label: string;
+  kind: 'signifier' | 'brand-centroid' | 'competitor';
+  x: number; // 0 (Conventional) to 100 (Subversive)
+  y: number; // 0 (Mythological Abstraction) to 100 (Denotative Literalism)
+  quadrant: string;
+}
+
+export function generateStructuralPositioningMatrix(
+  pins: SignifierPin[],
+  competitors: CompetitorPin[],
+  brandName: string
+): {
+  nodes: StructuralMatrixNode[];
+  dominantQuadrant: string;
+  summary: string;
+} {
+  const subversiveKeywords = [
+    'subvert',
+    'rebel',
+    'brutalist',
+    'anti',
+    'unapologetic',
+    'raw',
+    'contrast',
+    'counter',
+    'slowness',
+    'constraint',
+  ];
+  const mythicKeywords = [
+    'myth',
+    'alchemy',
+    'ideology',
+    'sovereign',
+    'sacred',
+    'permanence',
+    'truth',
+    'heritage',
+    'luxury',
+    'ritual',
+  ];
+
+  const signifierNodes: StructuralMatrixNode[] = pins.map((pin, idx) => {
+    const text = `${pin.connotation} ${pin.ideology} ${pin.paradigmaticAlternative ?? ''}`.toLowerCase();
+    const subHits = subversiveKeywords.filter((kw) => text.includes(kw)).length;
+    const mythHits = mythicKeywords.filter((kw) => text.includes(kw)).length;
+
+    const x =
+      pin.culturalAxisX !== undefined
+        ? clamp(50 + pin.culturalAxisX, 8, 92)
+        : clamp(32 + subHits * 18 + ((idx * 11) % 15), 10, 90);
+    const y =
+      pin.culturalAxisY !== undefined
+        ? clamp(50 - pin.culturalAxisY, 8, 92)
+        : clamp(68 - mythHits * 18 - ((idx * 7) % 12), 10, 90);
+
+    const quadrant =
+      x >= 50 && y < 50
+        ? 'Mythic Subversion'
+        : x < 50 && y < 50
+        ? 'Canonical Myth'
+        : x >= 50 && y >= 50
+        ? 'Tactical Disruption'
+        : 'Literal Convention';
+
+    return {
+      id: pin.id,
+      label: pin.label,
+      kind: 'signifier',
+      x: Math.round(x),
+      y: Math.round(y),
+      quadrant,
+    };
+  });
+
+  const avgX =
+    signifierNodes.length > 0
+      ? Math.round(
+          signifierNodes.reduce((acc, n) => acc + n.x, 0) / signifierNodes.length
+        )
+      : 50;
+  const avgY =
+    signifierNodes.length > 0
+      ? Math.round(
+          signifierNodes.reduce((acc, n) => acc + n.y, 0) / signifierNodes.length
+        )
+      : 50;
+
+  const dominantQuadrant =
+    avgX >= 50 && avgY < 50
+      ? 'Mythic Subversion'
+      : avgX < 50 && avgY < 50
+      ? 'Canonical Myth'
+      : avgX >= 50 && avgY >= 50
+      ? 'Tactical Disruption'
+      : 'Literal Convention';
+
+  const centroidNode: StructuralMatrixNode = {
+    id: 'brand-centroid',
+    label: `${brandName} (Centroid)`,
+    kind: 'brand-centroid',
+    x: avgX,
+    y: avgY,
+    quadrant: dominantQuadrant,
+  };
+
+  const compNodes: StructuralMatrixNode[] = competitors.map((c) => ({
+    id: c.id,
+    label: c.name,
+    kind: 'competitor',
+    x: clamp(c.x, 8, 92),
+    y: clamp(c.y, 8, 92),
+    quadrant: 'Competitor Code',
+  }));
+
+  const summary =
+    signifierNodes.length === 0
+      ? 'Tag at least one visual or textual signifier to compute the structural positioning centroid.'
+      : `${brandName} clusters in ${dominantQuadrant} (Subversion ${avgX}% · Mythic Depth ${100 - avgY}%), differentiating against ${competitors.length} competitor cultural codes.`;
+
+  return {
+    nodes: [...signifierNodes, centroidNode, ...compNodes],
+    dominantQuadrant,
+    summary,
+  };
+}
+
 

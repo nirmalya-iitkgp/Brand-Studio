@@ -42,10 +42,15 @@ export default function App() {
   });
 
   const [activeTool, setActiveTool] = useState<ToolId>('hub');
+  const [paperMode, setPaperMode] = useState<boolean>(false);
   const [showNewModal, setShowNewModal] = useState(false);
   const [newBrandName, setNewBrandName] = useState('');
   const [newBrandSector, setNewBrandSector] = useState('');
   const [toast, setToast] = useState<string | null>(null);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', !paperMode);
+  }, [paperMode]);
 
   const activeProject =
     projects.find((p) => p.id === activeProjectId) ?? projects[0];
@@ -121,11 +126,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#121316] text-[#F3EFE6] flex flex-col">
+    <div className="min-h-screen bg-[var(--bg-canvas)] text-[var(--ink-primary)] flex flex-col">
       <TopBar
         projects={projects}
         activeProject={activeProject}
         activeTool={activeTool}
+        paperMode={paperMode}
+        onTogglePaperMode={() => setPaperMode((prev) => !prev)}
         onSelectProject={(id) => setActiveProjectId(id)}
         onNavigate={(tool) => setActiveTool(tool)}
         onOpenNewModal={() => setShowNewModal(true)}
@@ -184,6 +191,7 @@ export default function App() {
         {activeTool === 'signifier-audit' && (
           <SignifierAuditTool
             project={activeProject}
+            paperMode={paperMode}
             onUpdate={(signifierAudit) =>
               updateActiveProject({ ...activeProject, signifierAudit })
             }

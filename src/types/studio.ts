@@ -82,11 +82,18 @@ export interface SignifierPin {
   denotation: string;
   connotation: string;
   ideology: string;
+  // Ogden & Richards Semiotic Triangle & Saussurean Structuralism
+  thoughtReference?: string;
+  referent?: string;
+  paradigmaticAlternative?: string;
+  culturalAxisX?: number; // -50 (Conventional) to +50 (Subversive)
+  culturalAxisY?: number; // -50 (Literal/Denotative) to +50 (Mythic/Connotative)
 }
 
 export interface SignifierAuditData {
   assetUrl: string;
   assetTitle: string;
+  textualAsset?: string;
   pins: SignifierPin[];
 }
 
